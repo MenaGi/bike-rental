@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule an Appointment - Garage Automotive Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles for the calendar */
+        #calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .selected {
+            background-color: #007bff;
+            color: white;
+        }
+        .time-slot {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .confirm-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .confirm-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .confirm-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="c:/Users/Marina Girgis/OneDrive/Pictures/Screenshots/Screenshot 2025-01-25 222731.png" alt="Garage Logo" style="position: absolute; top: 10px; left: 10px; width: 100px; height: 100px;">
+        <h1>Garage Automotive Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services_final_two_per_row.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="light-grey-box">
+            <h2>Schedule an Appointment</h2>
+            <p>Once you’ve entered your personal information, you’ll be able to view Marc’s schedule below. Select the date and time that work best for you, and we’ll make the booking process quick and effortless to meet your needs.</p>
+            <div id="calendar" class="calendar">
+                <h3>Select a Date</h3>
+                <table>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                    <tr>
+                        <td class="calendar-day" onclick="selectDate(1)">1</td>
+                        <td class="calendar-day" onclick="selectDate(2)">2</td>
+                        <td class="calendar-day" onclick="selectDate(3)">3</td>
+                        <td class="calendar-day" onclick="selectDate(4)">4</td>
+                        <td class="calendar-day" onclick="selectDate(5)">5</td>
+                        <td class="calendar-day" onclick="selectDate(6)">6</td>
+                        <td class="calendar-day" onclick="selectDate(7)">7</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-day" onclick="selectDate(8)">8</td>
+                        <td class="calendar-day" onclick="selectDate(9)">9</td>
+                        <td class="calendar-day" onclick="selectDate(10)">10</td>
+                        <td class="calendar-day" onclick="selectDate(11)">11</td>
+                        <td class="calendar-day" onclick="selectDate(12)">12</td>
+                        <td class="calendar-day" onclick="selectDate(13)">13</td>
+                        <td class="calendar-day" onclick="selectDate(14)">14</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-day" onclick="selectDate(15)">15</td>
+                        <td class="calendar-day" onclick="selectDate(16)">16</td>
+                        <td class="calendar-day" onclick="selectDate(17)">17</td>
+                        <td class="calendar-day" onclick="selectDate(18)">18</td>
+                        <td class="calendar-day" onclick="selectDate(19)">19</td>
+                        <td class="calendar-day" onclick="selectDate(20)">20</td>
+                        <td class="calendar-day" onclick="selectDate(21)">21</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-day" onclick="selectDate(22)">22</td>
+                        <td class="calendar-day" onclick="selectDate(23)">23</td>
+                        <td class="calendar-day" onclick="selectDate(24)">24</td>
+                        <td class="calendar-day" onclick="selectDate(25)">25</td>
+                        <td class="calendar-day" onclick="selectDate(26)">26</td>
+                        <td class="calendar-day" onclick="selectDate(27)">27</td>
+                        <td class="calendar-day" onclick="selectDate(28)">28</td>
+                    </tr>
+                    <tr>
+                        <td class="calendar-day" onclick="selectDate(29)">29</td>
+                        <td class="calendar-day" onclick="selectDate(30)">30</td>
+                        <td class="calendar-day" onclick="selectDate(31)">31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Available Time Slots</h3>
+            <div>
+                <table>
+                    <tr>
+                        <td class="time-slot" onclick="selectTime(this, '08:00')">08:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '09:00')">09:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '10:00')">10:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '11:00')">11:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '12:00')">12:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '14:00')">14:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '15:00')">15:00</td>
+                        <td class="time-slot" onclick="selectTime(this, '16:00')">16:00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="confirm-box">
+                <button id="confirm-button" class="confirm-button" style="display: none;" onclick="confirmSelection()">Confirm</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Garage Automotive Service</p>
+    </footer>
+    <script>
+        function selectDate(day) {
+            const cells = document.querySelectorAll('.calendar-day');
+            cells.forEach(cell => cell.classList.remove('selected'));
+            cells[day - 1].classList.add('selected');
+            document.getElementById('confirm-button').style.display = 'block'; // Show confirm button
+        }
+
+        function selectTime(element, time) {
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach(slot => slot.classList.remove('selected'));
+            element.classList.add('selected');
+            localStorage.setItem('selectedTime', time); // Store selected time
+            document.getElementById('confirm-button').style.display = 'block'; // Show confirm button
+        }
+
+        function confirmSelection() {
+            const selectedDate = document.querySelector('.calendar-day.selected');
+            const day = selectedDate ? selectedDate.textContent : 'not selected';
+            const time = localStorage.getItem('selectedTime');
+            alert(`Confirmed Appointment:\nDate: ${day}\nTime: ${time}`);
+            window.location.href = `confirmation.html?date=${day}&time=${time}`;
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation - Garage Automotive Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Garage Automotive Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services_final_two_per_row.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="light-grey-box">
+            <h2>Appointment Confirmation</h2>
+            <p id="confirmation-text"></p>
+            <script>
+                // Function to get query parameters
+                function getQueryParam(param) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+
+                // Display the confirmation details
+                window.onload = function() {
+                    const firstName = getQueryParam('first-name');
+                    const lastName = getQueryParam('last-name');
+                    const workerName = getQueryParam('worker');
+                    const date = getQueryParam('date');
+                    const time = getQueryParam('time');
+                    const confirmationText = document.getElementById('confirmation-text');
+                    
+                    confirmationText.textContent = `Thank you, ${firstName} ${lastName}. Your appointment with ${workerName} is confirmed for ${date} at ${time}.`;
+                };
+            </script>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Garage Automotive Service</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment - Garage Automotive Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Garage Automotive Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services_final_two_per_row.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="light-grey-box">
+            <h2>Schedule an Appointment</h2>
+            <form id="schedule-form" style="display: flex; flex-direction: column; width: 300px; margin: auto;">
+                <label for="date">Choose a date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Choose a time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Confirm Appointment</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Garage Automotive Service</p>
+    </footer>
+    <script>
+        document.getElementById('schedule-form').onsubmit = function(event) {
+            event.preventDefault();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            window.location.href = `confirmation.html?date=${date}&time=${time}`;
+        };
+    </script>
+</body>
+</html>

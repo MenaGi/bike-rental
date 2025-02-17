@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Garage Automotive Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Garage Automotive Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="light-grey-box">
+            <h2>Booking Confirmation</h2>
+            <p id="confirmation-message">Thank you for booking an appointment with us. We have received your details and will contact you shortly to confirm the appointment.</p>
+            <a href="index.html">Return to Home</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Garage Automotive Service</p>
+    </footer>
+    <script>
+        // Function to get query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Display the confirmation message with date and time
+        window.onload = function() {
+            const date = getQueryParam('date');
+            const time = getQueryParam('time');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            if (date && time) {
+                confirmationMessage.textContent = `Thank you for booking an appointment with us. Your appointment is scheduled for ${date} at ${time}. We will contact you shortly to confirm the appointment.`;
+            }
+        };
+    </script>
+</body>
+</html>

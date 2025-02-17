@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Change to white for a cleaner look */
+}
+
+header {
+    background: #35424a; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 20px; /* Space between the cards */
+    margin: 20px; /* Optional margin around the grid */
+}
+
+.card {
+    border: 2px solid #000; /* Bold border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the card */
+    background-color: #f9f9f9; /* Light background for cards */
+    width: 200px; /* Set a fixed width */
+    height: auto; /* Allow height to adjust based on content */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 20px; /* Add margin for spacing between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.book-button {
+    margin-top: 10px;
+}
+
+footer {
+    background: #35424a; /* Dark background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.light-grey-box {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px auto; /* Center the box */
+    width: 80%; /* Width of the box */
+    text-align: center; /* Center text */
+}

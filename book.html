@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service - Garage Automotive Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Garage Automotive Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="light-grey-box">
+            <h2>Book an appointment</h2>
+            <p id="worker-text">Once you’ve chosen a specialist, you will first need to enter your details.</p>
+            
+            <script>
+                // Function to get query parameters
+                function getQueryParam(param) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+
+                // Display the selected worker's name
+                window.onload = function() {
+                    const workerName = getQueryParam('worker');
+                    const workerText = document.getElementById('worker-text');
+                    if (workerName) {
+                        workerText.textContent = `Once you’ve chosen ${workerName} as your specialist, you will first need to enter your details.`;
+                    }
+                };
+            </script>
+            
+            <form action="schedule.html" method="GET" style="display: flex; flex-direction: column; width: 300px; margin: auto;">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+                
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="comments">Comments & Requests:</label>
+                <textarea id="comments" name="comments"></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Garage Automotive Service</p>
+    </footer>
+</body>
+</html>
